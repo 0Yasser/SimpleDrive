@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      get 'blobs/index'
-      get 'blobs/show'
-    end
+  
+  devise_for :users, path: 'v1/auth', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  controllers: {
+    sessions: 'v1/auth/sessions',
+    registrations: 'v1/auth/registrations'
+  }
+
+  namespace :v1 do
+    get 'user_details', to: 'users/users#index'
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
