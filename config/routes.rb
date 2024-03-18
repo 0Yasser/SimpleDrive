@@ -11,7 +11,14 @@ Rails.application.routes.draw do
   }
 
   namespace :v1 do
-    get 'user_details', to: 'users/users#index'
+    namespace :users do
+      get 'details', to: 'users#index'
+    end
+    namespace :blobs do
+      post '', to: 'blobs#create'
+      get '/:id_or_path', to: 'blobs#index'
+      # get 'blobs/delete/<id>', to: 'blobs#destroy'
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

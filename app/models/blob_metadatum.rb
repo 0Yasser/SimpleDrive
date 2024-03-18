@@ -1,0 +1,2 @@
+class BlobMetadatum < ApplicationRecord
+end

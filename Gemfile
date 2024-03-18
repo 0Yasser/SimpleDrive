@@ -31,6 +31,7 @@ gem "bootsnap", require: false
 gem 'devise'
 gem 'devise-jwt', '~> 0.11.0'
 gem 'jsonapi-serializer'
+gem 'aws-sdk-s3', require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
