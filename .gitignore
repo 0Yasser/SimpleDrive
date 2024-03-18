@@ -31,3 +31,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore the directory on which the encoded string files will be stored at
+public/uploads
