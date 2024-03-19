@@ -34,18 +34,18 @@ Generally the steps are:
 3. Remove the check on the block all publick access checkbox on the creation page, preferably just check the last two
 4. Now create the bucket
 5. Create a new IAM Policy:
-  5.1. Specify the policy service to be on s3 service only
-  5.2. Specify the policy actions to be: ListBucket, GetObject, PutObject, DeleteObject, PutObjectAcl
-  5.3. Specify the policy resources to add the following bucket names: `simple-drive-project` and `simple-drive-project/*` or whatever are the names defined here in the `storage.yml` file
-  5.4. Create the IAM policy with a given name
+    1. Specify the policy service to be on s3 service only
+    2. Specify the policy actions to be: ListBucket, GetObject, PutObject, DeleteObject, PutObjectAcl
+    3. Specify the policy resources to add the following bucket names: `simple-drive-project` and `simple-drive-project/*` or whatever are the names defined here in the `storage.yml` file
+    4. Create the IAM policy with a given name
 6. Create a new IAM user:
-  6.1. In the permissions options choose `attach policies directly` and choose the previously created IAM policy
-  6.2. Create the user
+    1. In the permissions options choose `attach policies directly` and choose the previously created IAM policy
+    2. Create the user
 7. Check the new IAM user's security credentials and create a new access key
 8. Choose application running outside AWS and now create the access key
 9. Copy the credentials (Access key & Secret access key) and put them in the rails project's credentials
-  9.1. For that, do `EDITOR="code --wait" rails credentials:edit` to open you rails credentials in VSCode
-  9.2. Add the following lines then save and close: 
+    1. For that, do `EDITOR="code --wait" rails credentials:edit` to open you rails credentials in VSCode
+    2. Add the following lines then save and close: 
   ```
   aws:
     access_key_id: <your-access-key-id>
