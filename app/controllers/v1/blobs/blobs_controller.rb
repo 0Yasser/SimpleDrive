@@ -1,8 +1,5 @@
 class V1::Blobs::BlobsController < ApplicationController
-  # def index
-  #   # render json: 'UserSerializer.new(current_user).serializable_hash[:data][:attributes]', status: :ok
-  # BlobSerializer.new(request.body.read).serializable_hash[:data][:attributes]
-  # end
+  before_action :authenticate_user!
   def index
     id_or_path = params[:id_or_path]
     blob_md = BlobMetadatum.find_by(blob_id: id_or_path)
