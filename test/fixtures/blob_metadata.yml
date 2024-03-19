@@ -1,0 +1,8 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blob_id: MyString
+  size: MyString
+  created_at: 2024-03-18 18:43:15
+  storage_type: MyString
+  poster_id: MyString
